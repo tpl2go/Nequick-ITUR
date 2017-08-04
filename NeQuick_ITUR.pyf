@@ -1,0 +1,120 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module NeQuick_ITUR ! in 
+    interface  ! in :NeQuick_ITUR
+        function nequick(h,alat,along,mth,flx,ut) ! in :NeQuick_ITUR:NeQuick_ITUR.for
+            real*8 :: h
+            real*8 :: alat
+            real*8 :: along
+            integer :: mth
+            real*8 :: flx
+            real*8 :: ut
+            real*8 :: nequick
+        end function nequick
+        function eldens(h,alat,along) ! in :NeQuick_ITUR:NeQuick_ITUR.for
+            real*8 :: h
+            real*8 :: alat
+            real*8 :: along
+        end function eldens
+        function nemdgr(a,hm,bb,h) ! in :NeQuick_ITUR:NeQuick_ITUR.for
+            real*8 dimension(3) :: a
+            real*8 dimension(3) :: hm
+            real*8 dimension(6) :: bb
+            real*8 :: h
+            real*8 :: nemdgr
+        end function nemdgr
+        function topq(h,no,hmax,ho) ! in :NeQuick_ITUR:NeQuick_ITUR.for
+            real*8 :: h
+            real*8 :: no
+            real*8 :: hmax
+            real*8 :: ho
+            real*8 :: topq
+        end function topq
+        subroutine prepmdgr(mth,r12,fof2,fof1,foe,m3000,dip,hm,bb,a) ! in :NeQuick_ITUR:NeQuick_ITUR.for
+            integer :: mth
+            real*8 :: r12
+            real*8 :: fof2
+            real*8 :: fof1
+            real*8 :: foe
+            real*8 :: m3000
+            real*8 :: dip
+            real*8 dimension(3) :: hm
+            real*8 dimension(6) :: bb
+            real*8 dimension(3) :: a
+        end subroutine prepmdgr
+        subroutine ef1(alat,mth,flx,chi,foe,fof1) ! in :NeQuick_ITUR:NeQuick_ITUR.for
+            real*8 :: alat
+            integer :: mth
+            real*8 :: flx
+            real*8 :: chi
+            real*8 :: foe
+            real*8 :: fof1
+        end subroutine ef1
+        subroutine cciri(xmodip,mth,ut,r12,alat,along,fof2,m3000) ! in :NeQuick_ITUR:NeQuick_ITUR.for
+            real*8 :: xmodip
+            integer :: mth
+            real*8 :: ut
+            real*8 :: r12
+            real*8 :: alat
+            real*8 :: along
+            real*8 :: fof2
+            real*8 :: m3000
+        end subroutine cciri
+        function gamma1(xmodip,alat,along,hour,iharm,nq,k1,m,mm,m3,sfe) ! in :NeQuick_ITUR:NeQuick_ITUR.for
+            real*8 :: xmodip
+            real*8 :: alat
+            real*8 :: along
+            real*8 :: hour
+            integer :: iharm
+            integer dimension(k1) :: nq
+            integer, optional,check(len(nq)>=k1),depend(nq) :: k1=len(nq)
+            integer :: m
+            integer :: mm
+            integer, optional,check(len(sfe)>=m3),depend(sfe) :: m3=len(sfe)
+            real*8 dimension(m3) :: sfe
+            real*8 :: gamma1
+        end function gamma1
+        function peakh(foe,fof2,m3000) ! in :NeQuick_ITUR:NeQuick_ITUR.for
+            real*8 :: foe
+            real*8 :: fof2
+            real*8 :: m3000
+            real*8 :: peakh
+        end function peakh
+        subroutine sdec(mth,ut,sdelta,cdelta) ! in :NeQuick_ITUR:NeQuick_ITUR.for
+            integer :: mth
+            real*8 :: ut
+            real*8 :: sdelta
+            real*8 :: cdelta
+        end subroutine sdec
+        subroutine geomagin(filenam,pdip) ! in :NeQuick_ITUR:NeQuick_ITUR.for
+            character*11 :: filenam
+            real*8 dimension(39,39) :: pdip
+        end subroutine geomagin
+        function philam(pdip,alat,along) ! in :NeQuick_ITUR:NeQuick_ITUR.for
+            real*8 dimension(39,39) :: pdip
+            real*8 :: alat
+            real*8 :: along
+            real*8 :: philam
+        end function philam
+        function fexp(a) ! in :NeQuick_ITUR:NeQuick_ITUR.for
+            real*8 :: a
+            real*8 :: fexp
+        end function fexp
+        function djoin(f1,f2,alpha,x) ! in :NeQuick_ITUR:NeQuick_ITUR.for
+            real*8 :: f1
+            real*8 :: f2
+            real*8 :: alpha
+            real*8 :: x
+            real*8 :: djoin
+        end function djoin
+        function finter3(z,x) ! in :NeQuick_ITUR:NeQuick_ITUR.for
+            real*8 dimension(4) :: z
+            real*8 :: x
+            real*8 :: finter3
+        end function finter3
+    end interface 
+end python module NeQuick_ITUR
+
+! This file was auto-generated with f2py (version:2).
+! See http://cens.ioc.ee/projects/f2py2e/

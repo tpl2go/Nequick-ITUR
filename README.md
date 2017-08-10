@@ -1,7 +1,7 @@
-# Nequick2
-python wrapper for ITUR Nequick 2
+# Nequick-ITUR
+python wrapper for Nequick-ITUR
 
-Nequick2 is an ionospheric model accepted by the International Telecommunication Union (ITU)
+Nequick-ITUR is an ionospheric model accepted by the International Telecommunication Union (ITU)
 
 The fortran code can be downloaded from <http://www.itu.int/en/ITU-R/study-groups/rsg3/Pages/iono-tropo-spheric.aspx>
 
